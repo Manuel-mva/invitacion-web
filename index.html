@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="imagenes/logo.png">
+    <title>Login - ITSEC SUCRE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="particles"></div>
+    <div class="container">
+        <div class="login-form">
+            <img src="imagenes/logo.png" alt="Logo ITSEC" class="logo">
+            <h1>ITSEC SUCRE</h1>
+            <p>Ingrese sus datos para acceder a su invitación personal</p>
+            <form id="loginForm" action="invitacion.html" method="get">
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="apellido" name="apellido" required>
+                    <label for="apellido">Apellido</label>
+                </div>
+                <button type="submit" class="submit-button">Visualizar Invitación</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Crear partículas
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 200;
+
+            const colors = [
+                '#FFFFFF',    // Blanco
+                '#FFD700',    // Dorado
+                '#FFA500',    // Naranja
+                '#FFE4B5',    // Melocotón claro
+                '#FFC107',    // Amarillo dorado
+                '#FFE5B4',    // Melocotón
+                '#FFB74D',    // Naranja claro
+                '#FFD54F',    // Amarillo claro
+                '#FFECB3',    // Amarillo muy claro
+                '#FFF3E0'     // Naranja muy claro
+            ];
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                const size = Math.random() < 0.3 ? 'small' : Math.random() < 0.6 ? 'medium' : 'large';
+                particle.className = `particle ${size}`;
+
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.opacity = Math.random() * 0.4 + 0.3;
+                particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Iniciar partículas cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+
+        // Función para mover partículas con el mouse
+        function moveParticles(e) {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            particles.forEach(particle => {
+                const rect = particle.getBoundingClientRect();
+                const particleX = rect.left + rect.width / 2;
+                const particleY = rect.top + rect.height / 2;
+
+                const deltaX = mouseX - particleX;
+                const deltaY = mouseY - particleY;
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                const maxDistance = 200;
+
+                if (distance < maxDistance) {
+                    const angle = Math.atan2(deltaY, deltaX);
+                    const force = (maxDistance - distance) / maxDistance;
+                    const moveX = Math.cos(angle) * force * 30;
+                    const moveY = Math.sin(angle) * force * 30;
+
+                    particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                } else {
+                    particle.style.transform = 'translate(0, 0)';
+                }
+            });
+        }
+
+        // Agregar eventos de mouse y touch
+        document.addEventListener('mousemove', moveParticles);
+        document.addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            moveParticles({
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+        });
+
+        // Restaurar posición original cuando el mouse/touch sale
+        document.addEventListener('mouseleave', () => {
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                particle.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
+</body>
+
+</html>
