@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Calligraffitti&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Calligraffitti&family=Shadows+Into+Light&family=Dancing+Script&display=swap');
 
 * {
     margin: 0;
@@ -51,9 +51,12 @@ body::before {
 }
 
 .login-form .logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 30px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: -20px;
+    right: 20px;
     filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
@@ -138,7 +141,7 @@ body::before {
 }
 
 .invitation-card {
-    background: url('imagenes/fondo_para_invitacion.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.377)), url('imagenes/fondo_para_invitacion.jpg') center/cover no-repeat;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
@@ -197,13 +200,13 @@ body::before {
     position: absolute;
     right: -20px;
     top: 40%;
-    transform: translateY(-50%);
+    transform: translateY(-117%);
     filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
 .invitation-title {
-    color: #FFD700;
-    font-size: 36px;
+    color: #f3d218;
+    font-size: 42px;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -211,26 +214,27 @@ body::before {
 }
 
 .institution-name {
-    color: #FFD700;
-    font-size: 20px;
+    color: #ffd900de;
+    font-size: 36px;
     margin: 5px 0;
-    font-family: cursive;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 .invitation-text {
     color: #fff;
     margin: 20px 0;
     line-height: 1.6;
-    font-family: cursive;
-    font-size: 18px;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 26px;
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 .invitation-text:first-of-type {
-    font-family: cursive;
-    font-size: 24px;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 30px;
     color: #FFD700;
     margin: 30px 0;
+    line-height: 1.8;
 }
 
 .invitation-text p {
@@ -238,24 +242,31 @@ body::before {
 }
 
 .guest-name {
-    color: #FFA500;
-    font-size: 36px;
-    margin: 20px 0;
+    color: #eba40d;
+    font-size: 48px;
+    margin: 30px 0;
     font-weight: normal;
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-    padding: 10px;
+    padding: 20px;
     display: inline-block;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    font-family: 'Alex Brush', cursive;
-    letter-spacing: 1px;
+    font-family: 'Alex Brush';
+    letter-spacing: 2px;
+    border-bottom: 2px solid rgba(255, 165, 0, 0.5);
 }
 
 .event-title {
-    color: #FFD700;
-    font-size: 20px;
-    margin: 10px 0;
-    font-family: cursive;
+    color: #e9e654;
+    font-size: 32px;
+    margin: 15px 0;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.event-title:first-of-type {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f0b63a;
+    font-weight: 300;
 }
 
 .event-details {
@@ -265,6 +276,9 @@ body::before {
     border: 2px solid rgba(255, 215, 0, 0.3);
     border-radius: 10px;
     background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .event-details p {
@@ -275,7 +289,10 @@ body::before {
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 215, 0, 0.2);
     font-family: Verdana, Geneva, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
 }
 
 .event-details p:last-child {
@@ -293,6 +310,12 @@ body::before {
     margin-top: 40px;
     color: #FFD700;
     font-size: 18px;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 26px;
 }
 
 .download-button {
@@ -430,7 +453,8 @@ body::before {
     }
 
     .event-details p {
-        padding: 8px 0;
+        justify-content: flex-start;
+        text-align: left;
     }
 
     .footer {
@@ -531,5 +555,36 @@ body::before {
 
     .footer {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .invitation-card {
+        padding: 30px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.757), rgba(0, 0, 0, 0.757)), url('imagenes/fondo_para_invitacion.jpg') center/cover no-repeat;
+    }
+
+    .invitation-card::before {
+        display: none;
+    }
+
+    .invitation-card .logo {
+        position: static;
+        transform: none;
+        margin: 0 auto 20px;
+        width: 60px;
+        display: block;
+        filter: none;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .header-text {
+        text-align: center;
+        margin-bottom: 10px;
     }
 } 
