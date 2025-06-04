@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Calligraffitti&family=Shadows+Into+Light&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Calligraffitti&family=Shadows+Into+Light&family=Dancing+Script:wght@300;400;700&display=swap');
 
 * {
     margin: 0;
@@ -53,10 +53,8 @@ body::before {
 .login-form .logo {
     width: 100px;
     height: 100px;
-    margin-bottom: 20px;
-    position: absolute;
-    top: -20px;
-    right: 20px;
+    margin: 0 auto 20px;
+    display: block;
     filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
