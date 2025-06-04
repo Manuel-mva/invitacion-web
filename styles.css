@@ -475,48 +475,55 @@ body::before {
 
     .login-form,
     .invitation-card {
-        padding: 20px;
+        width: 90%;
+        max-width: 450px;
+        padding: 15px;
         margin: 10px auto;
     }
 
-    .invitation-title {
+    .invitation-header {
+        padding: 10px;
+    }
+
+    .invitation-header h1 {
         font-size: 24px;
     }
 
     .institution-name {
-        font-size: 16px;
-    }
-
-    .guest-name {
-        font-size: 20px;
-    }
-
-    .event-title {
         font-size: 18px;
     }
 
-    .invitation-text {
-        font-size: 14px;
+    .event-title {
+        font-size: 20px;
     }
 
-    .event-details {
-        padding: 10px;
+    .invitation-text {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .guest-name {
+        font-size: 22px;
         margin: 15px 0;
     }
 
-    .event-details p {
-        padding: 6px 0;
+    .event-details {
+        font-size: 14px;
+        margin: 10px 0;
     }
 
-    .footer {
-        font-size: 14px;
-        margin-top: 20px;
+    .event-details p {
+        margin: 5px 0;
+    }
+
+    .event-details img {
+        width: 16px;
+        height: 16px;
     }
 
     .download-button {
-        width: 100%;
-        padding: 8px 15px;
-        font-size: 13px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
