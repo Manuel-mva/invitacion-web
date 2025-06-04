@@ -195,8 +195,8 @@ body::before {
     height: auto;
     position: absolute;
     right: -20px;
-    top: 40%;
-    transform: translateY(-117%);
+    top: 35%;
+    transform: translateY(-125%);
     filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
@@ -350,21 +350,26 @@ body::before {
     pointer-events: none;
     transition: transform 0.2s ease-out;
     will-change: transform;
+    background: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
 .particle.small {
     width: 2px;
     height: 2px;
+    background: rgba(255, 215, 0, 0.2);
 }
 
 .particle.medium {
     width: 4px;
     height: 4px;
+    background: rgba(255, 215, 0, 0.3);
 }
 
 .particle.large {
     width: 6px;
     height: 6px;
+    background: rgba(255, 215, 0, 0.4);
 }
 
 .loading-message,
