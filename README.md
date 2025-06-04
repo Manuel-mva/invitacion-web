@@ -23,11 +23,11 @@ Este proyecto es una página web para generar invitaciones personalizadas para e
 
 ```
 /
-├── index.html          # Página principal con el formulario de ingreso
-├── invitacion.html     # Página de la invitación personalizada
-├── invitacion.js       # Script para el manejo de la invitación
-├── styles.css          # Estilos de la aplicación
-└── imagenes/           # Carpeta con las imágenes del proyecto
+├── index.html          
+├── invitacion.html     
+├── invitacion.js       
+├── styles.css          
+└── imagenes/           
     ├── logo.png
     ├── calendario.png
     ├── ubicacion.png
