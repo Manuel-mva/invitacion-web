@@ -68,7 +68,3 @@ Manuel-mva
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT.
-
-## Contacto
-
-Para más información, contacta a ITSEC SUCRE. 
