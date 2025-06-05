@@ -15,6 +15,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 body::before {
@@ -27,7 +31,34 @@ body::before {
     background: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
+.instagram-container {
+    position: fixed;
+    left: 45px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
 
+.logo_instagram {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.logo_instagram img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nombre_instagram {
+    color: #ffae00a7;
+    font-family: cursive;
+    font-size: 20px;
+    margin: 0;
+}
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -595,4 +626,5 @@ body::before {
         text-align: center;
         margin-bottom: 10px;
     }
-} 
+}
+
